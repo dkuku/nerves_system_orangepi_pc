@@ -34,9 +34,9 @@ defmodule NervesSystemOpiPC.MixProject do
   defp nerves_package do
     [
       type: :system,
-      #artifact_sites: [
-      #  {:github_releases, "dkuku/#{@app}"}
-      #],
+      artifact_sites: [
+        {:github_releases, "dkuku/#{@app}"}
+      ],
       build_runner_opts: build_runner_opts(),
       platform: Nerves.System.BR,
       platform_config: [
@@ -97,11 +97,11 @@ defmodule NervesSystemOpiPC.MixProject do
   end
 
   defp build_runner_opts() do
-    if primary_site = System.get_env("BR2_PRIMARY_SITE") do
-      [make_args: ["BR2_PRIMARY_SITE=#{primary_site}"]]
-    else
+    #if primary_site = System.get_env("BR2_PRIMARY_SITE") do
+    #  [make_args: ["BR2_PRIMARY_SITE=#{primary_site}"]]
+    #else
       []
-    end
+    #end
   end
 
   defp set_target() do
